@@ -11,8 +11,16 @@ def test():
     elif request.method == "POST":
         
         req_json = request.json
-        Name = req_json["name"]
-        return jsonify({"response":"Hi "+ Name})
+
+        t_Id = req_json["p_id"]
+        t_Name = req_json["name"]
+        t_City = req_json["city"]
+
+        return jsonify({ "Id":   t_Id,
+                         "Name": t_Name,
+                         "City": t_City
+                         })
+
 
 if __name__ == '__main__':
     app.run(debug=True)
